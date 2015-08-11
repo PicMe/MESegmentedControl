@@ -5,6 +5,8 @@
 //  Copyright (c) 2012 David Thompson. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 #import "MEBadgeFactoryType.h"
 
 @class CustomBadge;
