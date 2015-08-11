@@ -41,7 +41,7 @@
     if ((oldBadgeNumber == 0) && (badgeNumber > 0))
     {
         // Add a badge, positioned on the upper right side of the requested segment
-        id <MEBadgeType> customBadge = [self.badgeFactory customBadgeWithString:[NSString stringWithFormat:@"%d", badgeNumber]];
+        id <MEBadgeType> customBadge = [self.badgeFactory customBadgeWithString:[NSString stringWithFormat:@"%ld", badgeNumber]];
         [customBadge setFrame:CGRectMake(((self.frame.size.width/self.numberOfSegments) * (segmentIndex + 1))-customBadge.frame.size.width +5, -5, customBadge.frame.size.width, customBadge.frame.size.height)];
         
         [_segmentBadges replaceObjectAtIndex:segmentIndex withObject:customBadge];
@@ -56,7 +56,7 @@
     else if ((oldBadgeNumber != badgeNumber) && (badgeNumber > 0))
     {
         // Update the number on the existing badge
-        [[_segmentBadges objectAtIndex:segmentIndex] autoBadgeSizeWithString:[NSString stringWithFormat:@"%d", badgeNumber]];
+        [[_segmentBadges objectAtIndex:segmentIndex] autoBadgeSizeWithString:[NSString stringWithFormat:@"%ld", badgeNumber]];
     }
     
     // Yield to the block for any custom setup to be done on the badge
